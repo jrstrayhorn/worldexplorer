@@ -19,6 +19,8 @@
   "author": "dSebastien <seb@dsebastien.net> (https://www.dsebastien.net)",
   "license": "MIT",
   "dependencies": {
+    "@types/chart.js": "^2.9.32",
+    "chart.js": "^3.1.1",
     "io-ts": "1.4.2"
   }
 }
