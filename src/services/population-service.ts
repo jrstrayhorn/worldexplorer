@@ -42,6 +42,7 @@ export class PopulationServiceImpl implements PopulationService {
       `Population service init.\nCountries API URL: [${this.countriesApiBaseUrl}]`
     );
   }
+
   async getAllCountries(): Promise<Country[]> {
     const response: Response = await fetch(
       `${this.countriesApiBaseUrl}?${WorldBankApiV2Params.FORMAT}=${WorldBankApiV2Formats.JSON}&${WorldBankApiV2Params.PER_PAGE}=320`
@@ -111,6 +112,15 @@ export class PopulationServiceImpl implements PopulationService {
       country.latitude
     );
   }
+
+  getIndicatorDataPoints<T extends WorldBankApiV2Indicators>(
+    indicator: T,
+    country: Country,
+    dateRange: string
+  ): Promise<DataPoint[]> {
+    return this.getIndicatorData(indicator, country, dateRange, 1000);
+  }
+
   async getTotalPopulation(
     country: Country,
     dateRange: string

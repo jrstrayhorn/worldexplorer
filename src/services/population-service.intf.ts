@@ -1,8 +1,14 @@
 import { Country, DataPoint } from '../domain';
+import { WorldBankApiV2Indicators } from './world-bank-api';
 
 export interface PopulationService {
   getAllCountries(): Promise<Country[]>;
   getCountry(countryCode: string): Promise<Country>;
+  getIndicatorDataPoints<T extends WorldBankApiV2Indicators>(
+    indicator: T,
+    country: Country,
+    dateRange: string
+  ): Promise<DataPoint[]>;
   getTotalPopulation(country: Country, dateRange: string): Promise<DataPoint[]>;
   getMalePopulation(country: Country, dateRange: string): Promise<DataPoint[]>;
   getFemalePopulation(
