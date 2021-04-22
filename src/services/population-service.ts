@@ -267,7 +267,7 @@ export class PopulationServiceImpl implements PopulationService {
     country?: Country
   ) {
     const countryCode = country?.id ?? 'all';
-    return `${this.countriesApiBaseUrl}/${countryCode}${WorldBankApiV2.INDICATORS_API_PREFIX}/${indicator}`;
+    return `${this.countriesApiBaseUrl}/${countryCode}/${WorldBankApiV2.INDICATORS_API_PREFIX}/${indicator}`;
   }
 
   private async getIndicatorData(

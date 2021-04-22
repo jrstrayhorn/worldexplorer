@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
-
 import { Utils } from 'src/common';
+
 import { Country } from 'src/domain';
 import { ChartDetails } from './chart-details.intf';
 import { WorldExplorerView } from './world-explorer-view.intf';
