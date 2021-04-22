@@ -232,7 +232,7 @@ export class PopulationServiceImpl implements PopulationService {
     );
   }
 
-  private async checkResponseStatus(response: Response): Promise<Response> {
+  async checkResponseStatus(response: Response): Promise<Response> {
     if (!response) {
       throw new Error('A response must be provided!');
     }
