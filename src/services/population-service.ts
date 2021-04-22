@@ -12,7 +12,7 @@ import {
 } from './world-bank-api';
 
 import { ThrowReporter } from 'io-ts/lib/ThrowReporter';
-import { Utils } from 'src/core';
+import { Utils } from 'src/common';
 
 export class PopulationServiceImpl implements PopulationService {
   private readonly countriesApiBaseUrl: string;
